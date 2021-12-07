@@ -1,0 +1,111 @@
+.hr-section {
+  background-color: #f4f5f7;
+  width: 100%;
+  padding-top: 80px;
+}
+
+.hr-section > div {
+  width: 90%;
+  margin: 0 auto;
+}
+.intro-texts {
+  width: 500px;
+  margin-bottom: 80px;
+}
+
+.intro-texts h2 {
+  font-size: 48px;
+  margin-bottom: 24px;
+}
+
+/* Card style */
+.card {
+  width: 359px;
+  background-color: #ffffff;
+  padding: 32px 32px 40px;
+  border-radius: 16px;
+  margin: 0 15px;
+}
+
+.card-img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.card-img img {
+  width: 37.36px;
+  height: 37.36px;
+}
+
+.card h3 {
+  font-size: 24px;
+  padding-bottom: 8px;
+}
+
+.hr-cards {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 -15px 112px -15px;
+}
+
+.employee-img {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.employee-img img {
+    width: 80%;
+  }
+
+@media screen and (max-width: 1280px) {
+}
+
+@media screen and (max-width: 768px) {
+  .intro-texts h2 {
+    font-size: 24px;
+  }
+
+  .hr-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0 64.02px 0;
+    width: 100%;
+  }
+
+  .card {
+    margin-bottom: 24px;
+    width: 100%;
+  }
+
+  .intro-texts {
+    width: 100%;
+    margin-bottom: 53px;
+  }
+
+  .intro-texts p {
+      font-size: 14px;
+  }
+
+  .card h3 {
+    font-size: 19px;
+  }
+
+  .card p {
+    font-size: 14px;
+  }
+
+  .employee-img img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+}

@@ -1,22 +1,12 @@
 import React from "react";
-import heroImage from "../../assets/images/3_Relax.png";
-import "../../assets/styles/Hero.css";
+import Hero from "../Hero";
+import HR from "../HR";
 
 const LandingPage = () => {
   return (
     <div className="landing">
-      <div className="hero-section">
-        <div className="hero-texts">
-          <h1>Throw paperwork into the trash where it belongs.</h1>
-          <p>
-            Eliminate all the hassle involved in managing people operations by
-            automating it.
-          </p>
-        </div>
-        <div className="hero-image">
-          <img src={heroImage} alt="Illustration of guy relaxing" />
-        </div>
-      </div>
+      <Hero />
+      <HR />
     </div>
   );
 };

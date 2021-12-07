@@ -21,6 +21,10 @@
 }
 
 .nav-bar {
+  width: 100%;
+}
+
+.nav-bar > div {
   list-style: none;
   display: flex;
   flex-direction: row;
@@ -85,22 +89,23 @@
   .navbar {
     position: relative;
     width: 100%;
+    margin: 0 auto;
   }
 
   .nav-bar.nav-bar-active {
     position: absolute;
     top: 64px;
     right: 0;
-    padding-top: 65px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    background-color: #fff;
+    justify-content: center;
+    padding-top: 65px;
+    background-color: #ffffff;
   }
 
   .nav-bar.nav-bar-active > div {
     width: 90%;
+    display: flex;
+    flex-direction: column;
   }
 
   .nav-bar {

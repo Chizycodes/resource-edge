@@ -1,13 +1,11 @@
-.landing {
+.hero-section {
   width: 90%;
   margin: 0 auto;
-}
-
-.hero-section {
   padding: 2rem 0 2rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 90vh;
 }
 
 .hero-texts h1 {
@@ -25,7 +23,7 @@
 }
 
 .hero-texts {
-    margin-right: 1rem;
+  margin-right: 1rem;
 }
 
 .hero-image img {
@@ -53,6 +51,10 @@
 }
 
 @media screen and (max-width: 760px) {
+  .hero-texts h1 {
+    font-size: 32px;
+  }
+
   .hero-section {
     display: flex;
     flex-direction: column;
@@ -73,6 +75,5 @@
   .hero-image img {
     height: 301px;
     width: 100%;
-    
   }
 }
