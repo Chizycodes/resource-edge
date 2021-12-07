@@ -105,7 +105,10 @@
   .employee-img img {
     width: 100%;
   }
+
+  .employee-img img {
+    margin-bottom: 50px;
+  }
+
 }
 
-@media screen and (max-width: 480px) {
-}
