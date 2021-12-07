@@ -32,30 +32,32 @@ const NavBar = () => {
         </div>
 
         <ul className={toggle ? "nav-bar nav-bar-active" : "nav-bar"}>
-          <div className="nav-menu-left">
-            <li className="features">
-              <Link to="/" onClick={clossMobileMenu}>
-                Features
-              </Link>
-            </li>
-            <li>
-              <Link to="/" onClick={clossMobileMenu}>
-                About
-              </Link>
-            </li>
-          </div>
+          <div>
+            <div className="nav-menu-left">
+              <li className="features">
+                <Link to="/" onClick={clossMobileMenu}>
+                  Features
+                </Link>
+              </li>
+              <li>
+                <Link to="/" onClick={clossMobileMenu}>
+                  About
+                </Link>
+              </li>
+            </div>
 
-          <div className="nav-menu-right">
-            <li>
-              <Link to="/" className="btn-li">
-                <Button text="Sign up" className="signup-btn" />
-              </Link>
-            </li>
-            <li className="btn-li">
-              <Link to="/">
-                <Button text="Sign in" className="signin-btn" />
-              </Link>
-            </li>
+            <div className="nav-menu-right">
+              <li>
+                <Link to="/" className="btn-li">
+                  <Button text="Sign up" className="signup-btn" />
+                </Link>
+              </li>
+              <li className="btn-li">
+                <Link to="/">
+                  <Button text="Sign in" className="signin-btn" />
+                </Link>
+              </li>
+            </div>
           </div>
         </ul>
       </div>

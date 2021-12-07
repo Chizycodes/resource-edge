@@ -1,4 +1,3 @@
-
 .navbar {
   width: 100%;
   padding: 16px 0;
@@ -90,10 +89,17 @@
 
   .nav-bar.nav-bar-active {
     position: absolute;
-    top: 116px;
+    top: 64px;
+    right: 0;
+    padding-top: 65px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    width: 100%;
+    background-color: #fff;
+  }
+
+  .nav-bar.nav-bar-active > div {
     width: 90%;
   }
 
@@ -126,7 +132,6 @@
     padding-bottom: 64px;
   }
 
-
   .signin-btn {
     height: 40px;
     margin-bottom: 16px;
@@ -142,5 +147,6 @@
     font-size: 14px;
     width: 100%;
     height: 40px;
+    margin-bottom: 40px;
   }
 }
