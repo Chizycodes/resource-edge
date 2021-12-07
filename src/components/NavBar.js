@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../images/logo_name.png";
-import mobileLogo from "../images/logo_mobile.png";
-import menuIcon from "../images/mobile_menu.png";
-import crossIcon from "../images/cross.png";
+import logo from "../assets/images/logo_name.png";
+import mobileLogo from "../assets/images/logo_mobile.png";
+import menuIcon from "../assets/images/mobile_menu.png";
+import crossIcon from "../assets/images/cross.png";
 import Button from "./Button";
+import "../assets/styles/NavBar.css";
 
 const NavBar = () => {
   const [toggle, setToggle] = useState(false);
