@@ -1,12 +1,12 @@
-.admin-section {
+.admin-finance {
   background-image: url("../images/all_rects.png");
   width: 100%;
   padding-top: 80px;
 }
 
-.admin-section > div {
+.admin-section, .finance-section {
   width: 90%;
-  margin: 0 auto;
+  margin: 0 auto 150px auto;
 }
 
 .admin-first {
@@ -35,6 +35,23 @@
   margin: 0 10px;
 }
 
+.finance-section {
+    padding-bottom: 86px;
+}
+
+.sponsors {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0 auto;
+}
+
+.sponsors img {
+    margin: 10px 15px;
+}
+
 @media screen and (max-width: 768px) {
   .admin-first {
     display: flex;
@@ -53,5 +70,21 @@
   .admin-cards > .card {
     width: 90%;
     margin-bottom: 20px;
+  }
+
+  .sponsors img {
+      width: 30%;
+      height: auto;
+  }
+
+  .finance-section {
+    padding-bottom: 0;
+}
+}
+
+@media screen and (max-width: 482px) {
+    .sponsors img {
+      width: 40%;
+      height: auto;
   }
 }
