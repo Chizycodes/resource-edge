@@ -9,6 +9,12 @@ import employeeIcon from "../../assets/images/employee_icon.png";
 import blueCheck from "../../assets/images/blue_check.png";
 
 const Dashboard = () => {
+    const [toggle, setToggle] = useState(false);
+
+    const toggleDropdown = () => {
+        setToggle(!toggle);
+    }
+
   return (
     <div className="dashboard">
       <nav className="dashboard-nav">
@@ -23,13 +29,13 @@ const Dashboard = () => {
             <div className="seperator"></div>
             <div className="">TM Dashboard</div>
           </div>
-          <div className="right">
-            <img src={avatar} alt="" />
+          <div className="right" onClick={toggleDropdown}>
+            <img src={avatar} alt="Avatar" />
           </div>
         </div>
       </nav>
       {/* DROPDOWN MENU*/}
-      <div className="db-dropdown">
+      <div className={toggle ? "db-dropdown db-dropdown-active" : "db-dropdown"}>
         <div className="dd-div">
           <h2>OSITADINMA NWANGWU</h2>
           <h3>Profile</h3>
