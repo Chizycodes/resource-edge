@@ -1,0 +1,26 @@
+.label {
+  margin-bottom: 8px;
+}
+
+.input {
+  width: 400px;
+  height: 40px;
+  border: 1px solid #dfe1e6;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin-bottom: 40px;
+  color: #42526e;
+  font-weight: 450;
+  font-size: 14px;
+  position: relative;
+}
+
+.input::placeholder {
+  color: #97a0af;
+}
+
+.input:focus {
+  outline: none;
+  border: 2px solid #4c9aff;
+}
