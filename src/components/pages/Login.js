@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
-import logo from "../../assets/images/logo.png";
-
 import "../../assets/styles/Login.css";
-import illus1 from "../../assets/images/login_left_illus.png";
-import illus2 from "../../assets/images/login_right_illus.png";
 import editIcon from "../../assets/images/edit_icon.png";
 import Input from "../Input";
 import { Link } from "react-router-dom";
@@ -13,7 +9,7 @@ import eyeIcon from "../../assets/images/eye_icon.png";
 import eyeIconFilled from "../../assets/images/eye_icon_filled.png";
 import Button from "../Button";
 
-const Login = () => {
+const Login = ({setPage}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordView, setPasswordView] = useState(false);
@@ -45,93 +41,82 @@ const Login = () => {
     navigate("/dashboard");
   };
   return (
-    <div className="login-bg">
-      <div className="login-container">
-        <Link to="/" className="logo-div">
-          <img src={logo} alt="Logo" />
-        </Link>
-        <div className="login-div">
-          <div>
-            <h1>Log in</h1>
-            <p>Access your resource edge account</p>
-          </div>
-
-          <form className="login-form">
-            {form === "email" && (
-              <div className="email-div">
-                <Input
-                  label="Email Address"
-                  type="email"
-                  placeholder="Enter email"
-                  name="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-                <img
-                  src={check}
-                  alt="green_check_icon"
-                  className={
-                    emailValidate()
-                      ? "green-check green-check-active"
-                      : "green-check"
-                  }
-                />
-                <Button
-                  className={
-                    emailValidate()
-                      ? "login-btn login-btn-active btn-lg"
-                      : "login-btn btn-lg"
-                  }
-                  onClick={handleClick}
-                />
-              </div>
-            )}
-            {form === "password" && (
-              <div>
-                <div className="details">
-                  <div className="name-email">
-                    <h3 className="name">{email}</h3>
-                    <p className="email">{email}</p>
-                  </div>
-                  <div className="edit-icon">
-                    <img
-                      src={editIcon}
-                      alt="Edit Icon"
-                      onClick={() => setForm("email")}
-                    />
-                  </div>
-                </div>
-
-                <div className="password-div">
-                  <Input
-                    label="Password"
-                    type={passwordView ? "text" : "password"}
-                    placeholder="Enter password"
-                    name="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                  <img
-                    src={passwordView ? eyeIconFilled : eyeIcon}
-                    alt="eye_icon"
-                    className="eye-icon"
-                    onClick={togglePassword}
-                  />
-                  <Button className="pw-btn btn-lg" onClick={handleSubmit} />
-                </div>
-              </div>
-            )}
-          </form>
-
-          <div className="line"></div>
-          <div className="f-pw">
-            <Link to="/reset_password">Forgot password?</Link>
-          </div>
-        </div>
+    <div className="login-div">
+      <div>
+        <h1>Log in</h1>
+        <p>Access your resource edge account</p>
       </div>
-      <div className="bottom">
-        <img src={illus1} alt="Illustration" />
-        <img src={illus2} alt="Illustration" />
+
+      <form className="login-form">
+        {form === "email" && (
+          <div className="email-div">
+            <Input
+              label="Email Address"
+              type="email"
+              placeholder="Enter email"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <img
+              src={check}
+              alt="green_check_icon"
+              className={
+                emailValidate()
+                  ? "green-check green-check-active"
+                  : "green-check"
+              }
+            />
+            <Button
+              className={
+                emailValidate()
+                  ? "login-btn login-btn-active btn-lg"
+                  : "login-btn btn-lg"
+              }
+              onClick={handleClick}
+            />
+          </div>
+        )}
+        {form === "password" && (
+          <div>
+            <div className="details">
+              <div className="name-email">
+                <h3 className="name">{email}</h3>
+                <p className="email">{email}</p>
+              </div>
+              <div className="edit-icon">
+                <img
+                  src={editIcon}
+                  alt="Edit Icon"
+                  onClick={() => setForm("email")}
+                />
+              </div>
+            </div>
+
+            <div className="password-div">
+              <Input
+                label="Password"
+                type={passwordView ? "text" : "password"}
+                placeholder="Enter password"
+                name="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <img
+                src={passwordView ? eyeIconFilled : eyeIcon}
+                alt="eye_icon"
+                className="eye-icon"
+                onClick={togglePassword}
+              />
+              <Button className="pw-btn btn-lg" onClick={handleSubmit} />
+            </div>
+          </div>
+        )}
+      </form>
+
+      <div className="line"></div>
+      <div className="f-pw">
+        <Link to="/reset">Forgot password?</Link>
       </div>
     </div>
   );

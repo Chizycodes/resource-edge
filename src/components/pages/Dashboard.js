@@ -27,7 +27,7 @@ const Dashboard = () => {
             />
             <img src={logo} alt="Logo" className="db-logo" />
             <div className="seperator"></div>
-            <div className="">TM Dashboard</div>
+            <div className="type">TM Dashboard</div>
           </div>
           <div className="right" onClick={toggleDropdown}>
             <img src={avatar} alt="Avatar" />

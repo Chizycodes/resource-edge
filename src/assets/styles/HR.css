@@ -8,6 +8,7 @@
   width: 90%;
   margin: 0 auto;
 }
+
 .intro-texts {
   width: 500px;
   margin-bottom: 80px;
@@ -65,8 +66,6 @@
     filter: drop-shadow(-28px 46px 60px rgba(9, 30, 66, 0.08));
   }
 
-@media screen and (max-width: 1280px) {
-}
 
 @media screen and (max-width: 768px) {
   .intro-texts h2 {

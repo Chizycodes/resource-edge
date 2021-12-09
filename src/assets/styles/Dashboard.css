@@ -48,6 +48,11 @@
   margin-right: 16px;
 }
 
+.type {
+    font-weight: 450;
+font-size: 16px;
+}
+
 .db-body {
   padding: 0 0 0 10%;
   height: 100vh;
@@ -132,7 +137,7 @@
 }
 
 .db-dropdown.db-dropdown-active {
-    display: block;
+  display: block;
   width: 300px;
   background: #ffffff;
   box-shadow: 0px 3px 5px rgba(9, 30, 66, 0.2),
@@ -148,7 +153,7 @@
 }
 
 .db-dropdown h2,
-p {
+.db-dropdown p {
   font-weight: bold;
   font-size: 12px;
   color: #6b778c;
@@ -220,4 +225,27 @@ p {
   color: #172b4d;
   font-weight: 450;
   font-size: 14px;
+}
+
+@media screen and (max-width: 840px) {
+  .db-body {
+    padding: 0 0 0 3%;
+  }
+
+  .task {
+    width: 95%;
+    height: 80px;
+  }
+
+  .greeting h1 {
+    font-size: 28px;
+  }
+
+  .tasks-div h2 {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 440px) {
+
 }
