@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router";
 import logo from "../../assets/images/logo.png";
+
 import "../../assets/styles/Login.css";
 import illus1 from "../../assets/images/login_left_illus.png";
 import illus2 from "../../assets/images/login_right_illus.png";
@@ -16,6 +18,8 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [passwordView, setPasswordView] = useState(false);
   const [form, setForm] = useState("email");
+
+  const navigate = useNavigate();
 
   const emailValidate = () => {
     const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -38,20 +42,21 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    navigate("/dashboard");
   };
   return (
     <div className="login-bg">
       <div className="login-container">
-        <div className="logo-div">
+        <Link to="/" className="logo-div">
           <img src={logo} alt="Logo" />
-        </div>
+        </Link>
         <div className="login-div">
           <div>
             <h1>Log in</h1>
             <p>Access your resource edge account</p>
           </div>
 
-          <form onSubmit={handleSubmit} className="login-form">
+          <form className="login-form">
             {form === "email" && (
               <div className="email-div">
                 <Input
