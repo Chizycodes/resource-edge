@@ -1,15 +1,15 @@
 import React from "react";
 import "../assets/styles/Input.css";
 
-const Input = ({ type, placeholder, inputName, value, onChange, label }) => {
+const Input = ({ type, placeholder, inputName, value, onChange, label, errorMessage }) => {
   return (
     <div>
-      <div>
-        <label className="label">{label}</label>
+      <div className="label">
+        <label>{label}</label>
       </div>
       <div>
         <input
-          className="input"
+          className={errorMessage ? "input error" : "input"}
           type={type}
           placeholder={placeholder}
           name={inputName}
@@ -17,7 +17,6 @@ const Input = ({ type, placeholder, inputName, value, onChange, label }) => {
           onChange={onChange}
         />
       </div>
-      
     </div>
   );
 };

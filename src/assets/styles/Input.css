@@ -9,7 +9,6 @@
   box-sizing: border-box;
   border-radius: 4px;
   padding: 8px 12px;
-  margin-bottom: 40px;
   color: #42526e;
   font-weight: 450;
   font-size: 14px;
@@ -23,4 +22,25 @@
 .input:focus {
   outline: none;
   border: 2px solid #4c9aff;
+}
+
+.input.error {
+  border: 1px solid #de350b;
+}
+
+.error-msg {
+  font-weight: 450;
+  font-size: 12px;
+  color: #de350b;
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.error-text {
+  padding-left: 6.55px;
+}
+
+.password {
+  margin-bottom: 40px;
 }
