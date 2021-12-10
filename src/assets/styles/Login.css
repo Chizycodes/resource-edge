@@ -26,8 +26,6 @@
 }
 
 .bottom {
-  position: absolute;
-  bottom: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -35,8 +33,18 @@
 }
 
 .bottom img {
+  bottom: 0;
+  position: absolute;
   width: 378.51px;
   height: 370.49px;
+}
+
+.btm-img-1 {
+  left: -24px;
+}
+
+.btm-img-2 {
+  right: -24px;
 }
 
 .login-div {
@@ -126,7 +134,7 @@
 .green-check.green-check-active {
   display: block;
   position: absolute;
-  top: 25px;
+  top: 32px;
   right: 10px;
 }
 
@@ -136,7 +144,7 @@
 
 .eye-icon {
   position: absolute;
-  top: 25px;
+  top: 35px;
   right: 10px;
   cursor: pointer;
 }
@@ -148,15 +156,17 @@
   border-radius: 4px;
   border: none;
   margin-top: 40px;
+  cursor: pointer;
 }
 
 .pw-btn {
   background-color: #0052cc;
 }
 
-@media screen and (max-width: 768px) {
-  .bottom {
-    display: none;
+@media screen and (max-width: 970px) {
+  .bottom img {
+    width: 280px;
+    height: 290px;
   }
 }
 
@@ -167,4 +177,27 @@
 
 .reset-msg {
   color: #091e42;
+}
+
+@media screen and (max-width: 560px) {
+  .login-container {
+    width: 90%;
+  }
+
+  .login-div {
+    width: 100%;
+  }
+
+  .logo-div {
+    width: 15rem;
+    max-width: 80%;
+  }
+
+  .logo-div img {
+    width: 100%;
+  }
+
+  .bottom {
+    display: none;
+  }
 }

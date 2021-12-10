@@ -9,7 +9,7 @@ import eyeIcon from "../../assets/images/eye_icon.png";
 import eyeIconFilled from "../../assets/images/eye_icon_filled.png";
 import Button from "../Button";
 
-const Login = ({setPage}) => {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordView, setPasswordView] = useState(false);
@@ -38,7 +38,10 @@ const Login = ({setPage}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate("/dashboard");
+    if(password) {
+      navigate("/dashboard");
+    }
+    
   };
   return (
     <div className="login-div">
@@ -101,6 +104,7 @@ const Login = ({setPage}) => {
                 name="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                required={true}
               />
               <img
                 src={passwordView ? eyeIconFilled : eyeIcon}

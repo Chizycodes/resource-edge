@@ -1,7 +1,7 @@
 import React from "react";
 import "../assets/styles/Input.css";
 
-const Input = ({ type, placeholder, inputName, value, onChange, label, errorMessage }) => {
+const Input = ({ type, placeholder, inputName, value, onChange, label, errorMessage, required }) => {
   return (
     <div>
       <div className="label">
@@ -15,6 +15,7 @@ const Input = ({ type, placeholder, inputName, value, onChange, label, errorMess
           name={inputName}
           value={value}
           onChange={onChange}
+          required={required}
         />
       </div>
     </div>

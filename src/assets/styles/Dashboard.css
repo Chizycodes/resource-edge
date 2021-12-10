@@ -49,8 +49,8 @@
 }
 
 .type {
-    font-weight: 450;
-font-size: 16px;
+  font-weight: 450;
+  font-size: 16px;
 }
 
 .db-body {
@@ -101,8 +101,8 @@ font-size: 16px;
   height: 32px;
   border: 1px solid #dddddd;
   background: #f3f3f3;
-  border-radius: 16px;
-  margin-right: 18px;
+  border-radius: 50%;
+  padding-right: 18px;
 }
 
 .resume-btn {
@@ -129,6 +129,7 @@ font-size: 16px;
   font-weight: 500;
   font-size: 14px;
   color: #222222;
+  padding-left: 18px;
 }
 
 /* Dropdown */
@@ -227,6 +228,10 @@ font-size: 16px;
   font-size: 14px;
 }
 
+.dd {
+  cursor: pointer;
+}
+
 @media screen and (max-width: 840px) {
   .db-body {
     padding: 0 0 0 3%;
@@ -246,6 +251,9 @@ font-size: 16px;
   }
 }
 
-@media screen and (max-width: 440px) {
-
+@media screen and (max-width: 548px) {
+  .circle {
+    width: 24px;
+    height: 24px;
+  }
 }
