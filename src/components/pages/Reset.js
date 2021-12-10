@@ -33,14 +33,13 @@ const Reset = () => {
     e.preventDefault();
 
     if (emailValidate()) {
-      showComponent.first = false;
-      showComponent.second = true;
+      setShowComponent({ first: false, second: true, third: false });
     }
   };
 
   return (
     <>
-      {showComponent.first === true && (
+      {showComponent.first && (
         <div className="login-div">
           <div>
             <h1>Reset Password</h1>
@@ -76,33 +75,14 @@ const Reset = () => {
         </div>
       )}
       {/*SUCCESS PAGE*/}
-      {
-      showComponent.second === true && (
-        <div className="login-div">
-          <div>
-            <h1>Reset Password</h1>
-          </div>
-          <div className="check-lg">
-            <img src={checkLg} alt="Green Large Check" />
-          </div>
-          <div className="reset-msg">
-            <p>A recovery email has been sent to your email address.</p>
-          </div>
-
-          <div className="line"></div>
-          <div className="f-pw">
-            <Link to="/login">Back to login</Link>
-          </div>
-        </div>
-      ) 
-      }
+      {showComponent.second && <Success setShowComponent={setShowComponent} />}
 
       {/*NEW PASSWORD*/}
-      {showComponent.third === true && (
+      {showComponent.third && (
         <NewPassword
           errorMessage={errorMessage}
           setErrorMessage={setErrorMessage}
-          showComponent={showComponent}
+          setShowComponent={setShowComponent}
         />
       )}
     </>
@@ -110,3 +90,30 @@ const Reset = () => {
 };
 
 export default Reset;
+
+const Success = ({setShowComponent}) => {
+  useEffect(() => {
+    setTimeout(() => {
+      setShowComponent({ first: false, second: false, third: true });
+    }, 4000);
+  }, []);
+
+  return (
+    <div className="login-div">
+      <div>
+        <h1>Reset Password</h1>
+      </div>
+      <div className="check-lg">
+        <img src={checkLg} alt="Green Large Check" />
+      </div>
+      <div className="reset-msg">
+        <p>A recovery email has been sent to your email address.</p>
+      </div>
+
+      <div className="line"></div>
+      <div className="f-pw">
+        <Link to="/login">Back to login</Link>
+      </div>
+    </div>
+  );
+};
