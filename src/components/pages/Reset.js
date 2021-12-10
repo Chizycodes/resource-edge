@@ -1,17 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Button from "../Button";
 import Input from "../Input";
 import redIcon from "../../assets/images/red_icon.png";
 import checkLg from "../../assets/images/green_large_check.png";
-
+import NewPassword from "../NewPassword";
 
 const Reset = () => {
   const [email, setEmail] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-
+  const [showComponent, setShowComponent] = useState({
+    first: true,
+    second: false,
+    third: false,
+  });
 
   const emailValidate = () => {
     const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -23,22 +25,22 @@ const Reset = () => {
       setErrorMessage("Enter a valid email");
       return false;
     }
-    setErrorMessage();
+    setErrorMessage("");
     return true;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    emailValidate();
-  };
 
-  const passwordReset = (e) => {
-    e.preventDefault();
-  }
+    if (emailValidate()) {
+      showComponent.first = false;
+      showComponent.second = true;
+    }
+  };
 
   return (
     <>
-      {errorMessage !== undefined && (
+      {showComponent.first === true && (
         <div className="login-div">
           <div>
             <h1>Reset Password</h1>
@@ -73,9 +75,9 @@ const Reset = () => {
           </div>
         </div>
       )}
-
       {/*SUCCESS PAGE*/}
-      {errorMessage === undefined && (
+      {
+      showComponent.second === true && (
         <div className="login-div">
           <div>
             <h1>Reset Password</h1>
@@ -92,62 +94,16 @@ const Reset = () => {
             <Link to="/login">Back to login</Link>
           </div>
         </div>
-      )}
+      ) 
+      }
 
-      {/*SET NEW PASSWORD */}
-      { (
-        <div className="login-div">
-          <div>
-            <h1>Reset Password</h1>
-            <p>The password should have atleast 6 characters</p>
-          </div>
-
-          <form className="login-form" onSubmit={passwordReset}>
-            <div className="email-div">
-              <div className="password">
-                <Input
-                  label="New Password"
-                  type="password"
-                  placeholder="Enter password"
-                  name="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  errorMessage={errorMessage}
-                />
-                {errorMessage && (
-                  <div className="error-msg">
-                    <img src={redIcon} alt="Red Icon" />
-                    <span className="error-text">{errorMessage}</span>
-                  </div>
-                )}
-              </div>
-              <div>
-                <Input
-                  label="Confirm Password"
-                  type="password"
-                  placeholder="Confirm password"
-                  name="confirmpassword"
-                  value={confirmPassword}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                  errorMessage={errorMessage}
-                />
-                {errorMessage && (
-                  <div className="error-msg">
-                    <img src={redIcon} alt="Red Icon" />
-                    <span className="error-text">{errorMessage}</span>
-                  </div>
-                )}
-              </div>
-
-              <Button className="login-btn login-btn-active btn-lg" />
-            </div>
-          </form>
-
-          <div className="line"></div>
-          <div className="f-pw">
-            <Link to="/login">Back to login</Link>
-          </div>
-        </div>
+      {/*NEW PASSWORD*/}
+      {showComponent.third === true && (
+        <NewPassword
+          errorMessage={errorMessage}
+          setErrorMessage={setErrorMessage}
+          showComponent={showComponent}
+        />
       )}
     </>
   );
