@@ -4,7 +4,7 @@
 }
 
 * {
-  font-family: circularStd;
+  font-family: circularStd, sans-serif;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -19,14 +19,20 @@ a {
   text-decoration: none;
 }
 
-h1, h2, h3 {
-  color: #091E42;
+h1,
+h2,
+h3 {
+  color: #091e42;
   font-weight: 700;
 }
 
 p {
-  color: #5E6C84;
+  color: #5e6c84;
   font-weight: 450;
+}
+
+button {
+  cursor: pointer;
 }
 
 .landing {
@@ -35,4 +41,3 @@ p {
   flex-direction: column;
   align-items: center;
 }
-
