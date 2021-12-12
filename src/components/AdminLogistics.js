@@ -1,4 +1,3 @@
-import React from "react";
 import "../assets/styles/AdminLogistics.css";
 import Card from "./Card";
 import icon4 from "../assets/images/icon4.png";

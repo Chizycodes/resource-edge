@@ -1,4 +1,3 @@
-import React from "react";
 import illus1 from "../assets/images/login_left_illus.png";
 import illus2 from "../assets/images/login_right_illus.png";
 import "../assets/styles/Login.css";

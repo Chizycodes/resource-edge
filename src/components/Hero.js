@@ -1,4 +1,3 @@
-import React from "react";
 import heroImage from "../assets/images/3_Relax.png";
 import "../assets/styles/Hero.css";
 

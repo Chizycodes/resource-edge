@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/images/logo_name.png";
 import mobileLogo from "../assets/images/logo_mobile.png";
@@ -24,6 +24,7 @@ const NavBar = ({ setUser }) => {
       password: "",
       isLogged: false,
     });
+    clossMobileMenu();
   };
 
   const getUser = localStorage.getItem("re-user");
@@ -77,7 +78,6 @@ const NavBar = ({ setUser }) => {
                     text="Sign out"
                     className="signin-btn"
                     onClick={handleLogout}
-                    onClick={clossMobileMenu}
                   />
                 )}
               </li>

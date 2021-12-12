@@ -1,4 +1,3 @@
-import React from 'react';
 import '../assets/styles/HR.css';
 
 const Card = ({image, title, text, color, className}) => {

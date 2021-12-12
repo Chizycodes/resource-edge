@@ -1,4 +1,3 @@
-import React from "react";
 import Card from "./Card";
 import icon1 from "../assets/images/icon1.png";
 import "../assets/styles/HR.css";

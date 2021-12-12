@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import "../../assets/styles/Login.css";
 import editIcon from "../../assets/images/edit_icon.png";

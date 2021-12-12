@@ -1,4 +1,3 @@
-import React from "react";
 import "../assets/styles/Input.css";
 
 const Input = ({ type, placeholder, inputName, value, onChange, label, errorMessage, required }) => {

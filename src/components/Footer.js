@@ -1,4 +1,3 @@
-import React from "react";
 import "../assets/styles/Footer.css";
 import { Link } from "react-router-dom";
 import grayLogo from "../assets/images/gray_logo.png";
