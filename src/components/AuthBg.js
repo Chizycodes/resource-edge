@@ -8,7 +8,7 @@ import Login from "./pages/Login";
 import Reset from "./pages/Reset";
 import NavBar from "./NavBar";
 
-const AuthBg = () => {
+const AuthBg = ({user, setUser}) => {
   return (
     <>
       <NavBar />
@@ -17,7 +17,7 @@ const AuthBg = () => {
           <Link to="/" className="logo-div">
             <img src={logo} alt="Logo" />
           </Link>
-          {window.location.pathname === "/login" && <Login />}
+          {window.location.pathname === "/login" && <Login user={user} setUser={setUser} />}
           {window.location.pathname === "/reset" && <Reset />}
         </div>
         <div className="bottom">

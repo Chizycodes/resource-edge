@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 import menuIcon from "../../assets/images/menu_icon.png";
 import logo from "../../assets/images/logo_name.png";
 import avatar from "../../assets/images/avatar.png";
@@ -9,7 +10,7 @@ import talentMIcon from "../../assets/images/task_manager_icon.png";
 import employeeIcon from "../../assets/images/employee_icon.png";
 import blueCheck from "../../assets/images/blue_check.png";
 
-const Dashboard = () => {
+const Dashboard = ({ setUser }) => {
   const [toggle, setToggle] = useState(false);
   const navigate = useNavigate();
 
@@ -17,7 +18,20 @@ const Dashboard = () => {
     setToggle(!toggle);
   };
 
+  useEffect(() => {
+    const getUser = localStorage.getItem("re-user");
+    if (!getUser) {
+      navigate("/login");
+    }
+  }, [navigate]);
+
   const handleLogout = () => {
+    localStorage.removeItem("re-user");
+    setUser({
+      email: "",
+      password: "",
+      isLogged: false,
+    });
     navigate("/");
   };
 
@@ -31,7 +45,10 @@ const Dashboard = () => {
               alt="Menu Icon"
               className="dashboard-menu-icon"
             />
-            <img src={logo} alt="Logo" className="db-logo" />
+            <Link to="/">
+              <img src={logo} alt="Logo" className="db-logo" />
+            </Link>
+
             <div className="seperator"></div>
             <div className="type">TM Dashboard</div>
           </div>

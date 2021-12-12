@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import "../../assets/styles/Login.css";
 import editIcon from "../../assets/images/edit_icon.png";
@@ -9,7 +9,7 @@ import eyeIcon from "../../assets/images/eye_icon.png";
 import eyeIconFilled from "../../assets/images/eye_icon_filled.png";
 import Button from "../Button";
 
-const Login = () => {
+const Login = ({ user }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordView, setPasswordView] = useState(false);
@@ -18,7 +18,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const emailValidate = () => {
-    const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(.\w{2,3})+$/;
+    const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
     if (!email || emailRegex.test(email) === false) {
       return false;
@@ -36,13 +36,25 @@ const Login = () => {
     setPasswordView(!passwordView);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if(password) {
+    if (email && password) {
+      user = {
+        email: password,
+        password: email,
+        isLogged: true,
+      };
+      localStorage.setItem("re-user", JSON.stringify(user));
       navigate("/dashboard");
     }
-    
   };
+  useEffect(() => {
+    const getUser = localStorage.getItem("re-user");
+    if (getUser) {
+      navigate("/dashboard");
+    }
+  }, [navigate]);
+
   return (
     <div className="login-div">
       <div>

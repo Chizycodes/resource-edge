@@ -2,12 +2,12 @@ import React from "react";
 import Hero from "../Hero";
 import HR from "../HR";
 import AdminLogistics from "../AdminLogistics";
-import NavBar from '../NavBar'
+import NavBar from "../NavBar";
 
-const LandingPage = () => {
+const LandingPage = ({ user, setUser }) => {
   return (
     <div className="landing">
-      <NavBar />
+      <NavBar user={user} setUser={setUser} />
       <Hero />
       <HR />
       <AdminLogistics />

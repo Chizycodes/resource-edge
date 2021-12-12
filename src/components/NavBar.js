@@ -7,7 +7,7 @@ import crossIcon from "../assets/images/cross.png";
 import Button from "./Button";
 import "../assets/styles/NavBar.css";
 
-const NavBar = () => {
+const NavBar = ({ setUser }) => {
   const [toggle, setToggle] = useState(false);
 
   const handleToggle = () => {
@@ -16,6 +16,17 @@ const NavBar = () => {
   const clossMobileMenu = () => {
     setToggle(false);
   };
+
+  const handleLogout = () => {
+    localStorage.removeItem("re-user");
+    setUser({
+      email: "",
+      password: "",
+      isLogged: false,
+    });
+  };
+
+  const getUser = localStorage.getItem("re-user");
 
   return (
     <nav className="navbar">
@@ -53,9 +64,22 @@ const NavBar = () => {
                 </Link>
               </li>
               <li className="btn-li">
-                <Link to="/login">
-                  <Button text="Sign in" className="signin-btn" />
-                </Link>
+                {!getUser ? (
+                  <Link to="/login">
+                    <Button
+                      text="Sign in"
+                      className="signin-btn"
+                      onClick={clossMobileMenu}
+                    />
+                  </Link>
+                ) : (
+                  <Button
+                    text="Sign out"
+                    className="signin-btn"
+                    onClick={handleLogout}
+                    onClick={clossMobileMenu}
+                  />
+                )}
               </li>
             </div>
           </div>
