@@ -26,13 +26,17 @@ const Dashboard = ({ setUser }) => {
   }, [navigate]);
 
   const handleLogout = () => {
-    localStorage.removeItem("re-user");
+    setTimeout(() => {
+      localStorage.removeItem("re-user");
     setUser({
       email: "",
       password: "",
       isLogged: false,
     });
     navigate("/");
+      
+    }, 2000);
+    
   };
 
   return (

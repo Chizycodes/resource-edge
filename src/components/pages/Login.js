@@ -39,13 +39,17 @@ const Login = ({ user }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (email && password) {
-      user = {
+      setTimeout(() => {
+        user = {
         email: password,
         password: email,
         isLogged: true,
       };
       localStorage.setItem("re-user", JSON.stringify(user));
       navigate("/dashboard");
+        
+      }, 2000);
+      
     }
   };
   useEffect(() => {
