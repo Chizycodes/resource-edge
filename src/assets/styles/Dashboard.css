@@ -31,7 +31,6 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  
 }
 
 .dashboard-nav .nav .right {
@@ -265,8 +264,6 @@
 }
 
 @media screen and (max-width: 420px) {
-  .dashboard-nav .nav .right {
-  }
   .type {
     font-size: 12px;
   }
