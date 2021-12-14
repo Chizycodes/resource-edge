@@ -1,6 +1,7 @@
 .navbar {
   width: 100%;
   padding: 16px 0;
+  background-color: #ffffff;
 }
 
 .nav-left {
@@ -90,12 +91,13 @@
     position: relative;
     width: 100%;
     margin: 0 auto;
+    z-index: 1000;
   }
 
-  .nav-bar.nav-bar-active {
+  .nav-bar {
     position: absolute;
     top: 64px;
-    right: 0;
+    right: 100%;
     display: flex;
     justify-content: center;
     padding-top: 65px;
@@ -103,14 +105,14 @@
     z-index: 1000;
   }
 
-  .nav-bar.nav-bar-active > div {
+  .nav-bar.nav-bar-active {
+    right: 0;
+  }
+
+  .nav-bar > div {
     width: 90%;
     display: flex;
     flex-direction: column;
-  }
-
-  .nav-bar {
-    display: none;
   }
 
   .nav-menu-left {

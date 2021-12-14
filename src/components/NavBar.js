@@ -30,62 +30,65 @@ const NavBar = ({ setUser }) => {
   const getUser = localStorage.getItem("re-user");
 
   return (
-    <nav className="navbar">
-      <div className="nav-div">
-        <div className="nav-left">
-          <Link to="/">
-            <img src={mobileLogo} alt="Logo" className="mobile-logo" />
-            <img src={logo} alt="Logo" className="desktop-logo" />
-          </Link>
-        </div>
-
-        <div className="menu-icon" onClick={handleToggle}>
-          <img src={toggle ? crossIcon : menuIcon} alt="menu_icon" />
-        </div>
-
-        <ul className={toggle ? "nav-bar nav-bar-active" : "nav-bar"}>
-          <div>
-            <div className="nav-menu-left">
-              <li className="features">
-                <Link to="/" onClick={clossMobileMenu}>
-                  Features
-                </Link>
-              </li>
-              <li>
-                <Link to="/" onClick={clossMobileMenu}>
-                  About
-                </Link>
-              </li>
-            </div>
-
-            <div className="nav-menu-right">
-              <li>
-                <Link to="/" className="btn-li">
-                  <Button text="Sign up" className="signup-btn" />
-                </Link>
-              </li>
-              <li className="btn-li">
-                {!getUser ? (
-                  <Link to="/login">
-                    <Button
-                      text="Sign in"
-                      className="signin-btn"
-                      onClick={clossMobileMenu}
-                    />
-                  </Link>
-                ) : (
-                  <Button
-                    text="Sign out"
-                    className="signin-btn"
-                    onClick={handleLogout}
-                  />
-                )}
-              </li>
-            </div>
+    <>
+      <nav className="navbar">
+        <div className="nav-div">
+          <div className="nav-left">
+            <Link to="/">
+              <img src={mobileLogo} alt="Logo" className="mobile-logo" />
+              <img src={logo} alt="Logo" className="desktop-logo" />
+            </Link>
           </div>
-        </ul>
-      </div>
-    </nav>
+
+          <div className="menu-icon" onClick={handleToggle}>
+            <img src={toggle ? crossIcon : menuIcon} alt="menu_icon" />
+          </div>
+
+          <ul className={toggle ? "nav-bar nav-bar-active" : "nav-bar"}>
+            <div>
+              <div className="nav-menu-left">
+                <li className="features">
+                  <Link to="/" onClick={clossMobileMenu}>
+                    Features
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/" onClick={clossMobileMenu}>
+                    About
+                  </Link>
+                </li>
+              </div>
+
+              <div className="nav-menu-right">
+                <li>
+                  <Link to="/" className="btn-li">
+                    <Button text="Sign up" className="signup-btn" />
+                  </Link>
+                </li>
+                <li className="btn-li">
+                  {!getUser ? (
+                    <Link to="/login">
+                      <Button
+                        text="Sign in"
+                        className="signin-btn"
+                        onClick={clossMobileMenu}
+                      />
+                    </Link>
+                  ) : (
+                    <Button
+                      text="Sign out"
+                      className="signin-btn"
+                      onClick={handleLogout}
+                    />
+                  )}
+                </li>
+              </div>
+            </div>
+          </ul>
+        </div>
+      </nav>
+    
+    </>
   );
 };
 
